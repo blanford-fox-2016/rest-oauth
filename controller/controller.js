@@ -1,6 +1,7 @@
 var models = require('../models')
 var Users = models.Users
-var jwt = require('jsonwebtoken')
+var oauth2lib = require('oauth20-provider');
+var oauth2 = new oauth2lib({log: {level: 2}});
 
 module.exports = {
   readAllData: function (req, res){
@@ -105,9 +106,9 @@ module.exports = {
     }).then((user) => {
       // console.log("password : " + req.body.password);
       if(user.password === req.body.password){
-        var token = jwt.sign({
-          username: user.username
-        }, 'secret', {expiresIn : 60 * 60})//1 hour
+        // var token = jwt.sign({
+        //   username: user.username
+        // }, 'secret', {expiresIn : 60 * 60})//1 hour
 
         res.json({
           success: true,

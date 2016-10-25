@@ -3,11 +3,14 @@ var router = express.Router();
 var models = require('../models')
 var Users = models.Users
 var controller = require('../controller/controller')
+var oauth2 = require('../bin/www')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+router.post('/token', oauth2.controller.token);
 
 
 // generate token

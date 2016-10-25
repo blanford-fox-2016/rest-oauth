@@ -7,6 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('rest-oauth:server');
 var http = require('http');
+var oauth2lib = require('oauth20-provider');
+var oauth2 = new oauth2lib({log: {level: 2}});
 
 /**
  * Get port from environment and store in Express.
@@ -28,7 +30,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
+server.use(oauth2.inject());
 /**
  * Normalize a port into a number, string, or false.
  */

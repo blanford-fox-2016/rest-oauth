@@ -57,9 +57,9 @@ ORM : sequelize
 
 
 Authentication Token User
-> npm install -g jsonwebtoken
+> npm install -g oauth20-provider
 
-> npm install --save jsonwebtoken
+>npm install --save oauth20-provider
 
 
 ORM's Installation :
