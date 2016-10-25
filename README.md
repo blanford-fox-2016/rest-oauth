@@ -76,6 +76,25 @@ Install dependencies :
 How to start server :
 > npm start
 
+Migration :
+
+Create_users
+>Table's Name : Users
+
+> Attributes : username, password, email
+
+How To Migrate :
+> sequelize db:migrate
+
+Seeder :
+
+|no|username|password|email|
+|--|--------|--------|-----|
+|1|admin|admin|admin@admin.com|
+
+How To Seed :
+> sequelize db:seed --seed seeders/20161025000529-admin_seed.js
+
 ************************************
 
 # API References
